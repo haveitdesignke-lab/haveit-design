@@ -1,0 +1,76 @@
+﻿@{
+	ViewData["Title"] = "haveit design";
+}
+<link rel="stylesheet" href="~/css/haveit.css" asp-append-version="true" />
+
+<section class="hero" id="home">
+	<div class="hero-bg"></div>
+	<div class="hero-left">
+		<h1><span>where brands find</span><span class="dynamic" id="typeTarget">conversions and ROI</span></h1>
+		<p>we turn clicks into customers — performance-driven marketing that builds trust, drives revenue, and scales your brand with human-first strategy.</p>
+		<div class="btns"><a href="#contact" class="btn-o magnet">start your growth audit →</a></div>
+		<div class="stats">
+			<div class="stat"><b>312%</b><span style="color:#FF9A3C;font-weight:700;font-size:11px">ROAS</span><span>average return</span></div>
+			<div class="stat"><b style="color:#fff">4.9/5<br />stars</b><span>from 200+ reviews</span></div>
+			<div class="stat"><b>100+</b><span>brands scaled</span></div>
+		</div>
+	</div>
+	<div class="float-wrap">
+		<div class="fcard magnet"><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><img src="https://i.pravatar.cc/100?img=32" style="width:40px;height:40px;border-radius:50%" /><div><b style="font-size:13px;color:#fff">sarah</b><br /><span style="color:#777;font-size:11px">eco bloom</span></div></div><p style="color:#9A9A9A;font-size:12px;line-height:1.6">"went from 2% to 5.8% CVR in 30 days."</p></div>
+		<div class="fcard magnet"><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><img src="https://i.pravatar.cc/100?img=12" style="width:40px;height:40px;border-radius:50%" /><div><b style="font-size:13px;color:#fff">james</b><br /><span style="color:#777;font-size:11px">northfield co.</span></div></div><p style="color:#9A9A9A;font-size:12px;line-height:1.6">"ROAS jumped 3.1x in 6 weeks."</p></div>
+	</div>
+</section>
+
+<section class="sec" id="work">
+	<h2>what we do best — revenue, not vanity metrics</h2>
+	<div class="cards">
+		<div class="card magnet"><div class="ic">◎</div><h3>Digital Marketing & Stratetegy</h3><p>Turn online traffic into loyal customers.</p></div>
+		<div class="card magnet"><div class="ic">✦</div><h3>Graphic & Logo Design</h3><p>Visual identities that leave a mark.</p></div>
+		<div class="card magnet"><div class="ic">◫</div><h3>Visual UI & Web Design</h3><p>Digital storefronts that convert clicks into cash.</p></div>
+		<div class="card magnet"><div class="ic">◍</div><h3>Social Media Marketing</h3><p>Turning passive followers into active buyers.</p></div>
+		<div class="card magnet"><div class="ic">✉</div><h3>Email Marketing & Bulk SMS</h3><p>Bringing back 36% of lost sales.</p></div>
+		<div class="card magnet"><div class="ic">↗</div><h3>Brand Solutions</h3><p>Giving your business a voice, and a pulse.</p></div>
+	</div>
+
+	<div class="cta" id="contact">
+		<div><h2>ready to turn clicks<br />into customers?</h2><p>Growth audit in 24hrs. 3 leaks costing you money — no pitch.</p></div>
+		<div class="form" style="flex-direction:column;align-items:flex-start">
+			<div style="display:flex;gap:10px;flex-wrap:wrap">
+				<div>
+					<input id="cName" placeholder="Your Name" />
+					<div id="nameErr" class="error-msg">please enter your name</div>
+				</div>
+				<div>
+					<input id="cPhone" placeholder="Your Number" inputmode="tel" />
+					<div id="phoneErr" class="error-msg">please enter your number</div>
+				</div>
+				<button class="btn-book magnet" onclick="bookAudit()">book my growth audit</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const words = ["conversions and ROI", "customers not clicks", "revenue not likes", "value not vanity"];
+	let wi = 0, ci = 0, del = false; const el = document.getElementById('typeTarget');
+	(function loop() { let w = words[wi]; if (!del) { el.textContent = w.substring(0, ++ci); if (ci === w.length) { del = true; setTimeout(loop, 1600); return; } } else { el.textContent = w.substring(0, --ci); if (ci === 0) { del = false; wi = (wi + 1) % words.length; } } setTimeout(loop, del ? 35 : 90); })();
+
+	function bookAudit() {
+		const nameEl = document.getElementById('cName');
+		const phoneEl = document.getElementById('cPhone');
+		const nameErr = document.getElementById('nameErr');
+		const phoneErr = document.getElementById('phoneErr');
+		let name = nameEl.value.trim();
+		let phone = phoneEl.value.trim();
+		let valid = true;
+		nameEl.classList.remove('input-error', 'shake'); phoneEl.classList.remove('input-error', 'shake');
+		nameErr.classList.remove('show'); phoneErr.classList.remove('show');
+		void nameEl.offsetWidth; void phoneEl.offsetWidth;
+		if (name.length < 2) { nameEl.classList.add('input-error', 'shake'); nameErr.classList.add('show'); valid = false; }
+		let digits = phone.replace(/\D/g, '');
+		if (digits.length < 8) { phoneEl.classList.add('input-error', 'shake'); phoneErr.classList.add('show'); valid = false; }
+		if (!valid) { if (name.length < 2) nameEl.focus(); else phoneEl.focus(); return; }
+		const msg = `Hi haveit design, I am ${name} (${phone}). Book my growth audit - I want to turn clicks into customers.`;
+		window.open('https://wa.me/254706489989?text=' + encodeURIComponent(msg), '_blank');
+	}
+</script>
