@@ -49,15 +49,15 @@
                 max-width: 100%;
                 border-right: 2px solid var(--orange);
                 padding-right: 6px;
-                white-space: nowrap;
+                white-space: nowrap
             }
 
                 .hero-left h1 span.dynamic.no-cursor {
-                    border-right-color: transparent !important;
+                    border-right-color: transparent !important
                 }
 
                 .hero-left h1 span.dynamic.typing {
-                    animation: blink.9s infinite
+                    animation: blink .9s infinite
                 }
 
 @keyframes blink {
@@ -71,7 +71,7 @@
     font-size: 14px;
     max-width: 480px;
     margin: 18px 0 28px;
-    line-height: 1.7;
+    line-height: 1.7
 }
 
 .btns {
@@ -186,7 +186,7 @@
         letter-spacing: -.04em;
         max-width: 520px;
         line-height: .95;
-        margin-bottom: 28px;
+        margin-bottom: 28px
     }
 
 .cards {
@@ -223,7 +223,7 @@
             opacity: 1
         }
 
-    .card.ic {
+    .card .ic {
         width: 36px;
         height: 36px;
         border-radius: 10px;
@@ -239,13 +239,13 @@
     .card h3 {
         font-size: 14px;
         font-weight: 800;
-        margin-bottom: 6px;
+        margin-bottom: 6px
     }
 
     .card p {
         font-size: 12px;
         color: #6A6A6A;
-        line-height: 1.5;
+        line-height: 1.5
     }
 
 .addon-trust {
@@ -343,7 +343,7 @@
 .addon-step p {
     font-size: 12px;
     color: #6A6A6A;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
 .addon-logo-rates {
@@ -364,21 +364,21 @@
 .logo-head-left b {
     color: var(--orange);
     font-size: 11px;
-    letter-spacing: .08em;
+    letter-spacing: .08em
 }
 
 .logo-head-left h2 {
     font-size: clamp(24px,3.5vw,36px);
     line-height: .95;
     letter-spacing: -.04em;
-    margin: 10px 0;
+    margin: 10px 0
 }
 
 .logo-head-left p {
     color: #6A6A6A;
     font-size: 12px;
     max-width: 460px;
-    line-height: 1.6;
+    line-height: 1.6
 }
 
 .rate-toggle {
@@ -434,7 +434,7 @@
 
     .logo-card.popular {
         border-color: rgba(255,154,60,.3);
-        background: radial-gradient(500px at 50% -20%,rgba(255,154,60,.1),transparent), #121212
+        background: radial-gradient(500px at 50% -20%,rgba(255,154,60,.1),transparent),#121212
     }
 
     .logo-card:hover {
@@ -447,13 +447,13 @@
     flex-direction: column
 }
 
-    .logo-price.usd {
+    .logo-price .usd {
         font-size: 22px;
         font-weight: 900;
         color: #fff
     }
 
-    .logo-price.kes {
+    .logo-price .kes {
         font-size: 11px;
         color: var(--orange);
         font-weight: 700;
@@ -463,7 +463,7 @@
 .logo-desc {
     font-size: 11px;
     color: #6A6A6A;
-    line-height: 1.5;
+    line-height: 1.5
 }
 
 .logo-principles {
@@ -481,7 +481,7 @@
     color: #5A5A5A;
     margin-top: 6px;
     padding-left: 12px;
-    position: relative;
+    position: relative
 }
 
     .principle-item:before {
@@ -557,7 +557,7 @@
     .cta p {
         font-size: 12px;
         color: #7A7A7A;
-        margin-top: 8px;
+        margin-top: 8px
     }
 
 .form {
@@ -609,7 +609,7 @@
     color: #ff7a7a;
     font-size: 10px;
     margin-top: 6px;
-    display: none;
+    display: none
 }
 
     .error-msg.show {
@@ -617,7 +617,7 @@
     }
 
 .shake {
-    animation: shake.3s
+    animation: shake .3s
 }
 
 @keyframes shake {
@@ -653,7 +653,7 @@
         gap: 28px
     }
 
-    .float-wrap.fcard:nth-child(2) {
+    .float-wrap .fcard:nth-child(2) {
         transform: none
     }
 }
@@ -701,7 +701,7 @@
     .faq-head b {
         color: var(--orange);
         font-size: 11px;
-        letter-spacing: .08em;
+        letter-spacing: .08em
     }
 
     .faq-head h2 {
@@ -715,7 +715,7 @@
     .faq-head p {
         color: #6A6A6A;
         font-size: 12px;
-        line-height: 1.6;
+        line-height: 1.6
     }
 
 .faq-list {
@@ -769,7 +769,7 @@
         flex-shrink: 0
     }
 
-.faq-item.open.faq-q span.icon {
+.faq-item.open .faq-q span.icon {
     transform: rotate(45deg);
     background: var(--orange);
     color: #111;
@@ -779,10 +779,10 @@
 .faq-a {
     max-height: 0;
     overflow: hidden;
-    transition: max-height.4s cubic-bezier(.16,1,.3,1)
+    transition: max-height .4s cubic-bezier(.16,1,.3,1)
 }
 
-.faq-item.open.faq-a {
+.faq-item.open .faq-a {
     max-height: 400px
 }
 
@@ -790,13 +790,13 @@
     padding: 0 18px 18px;
     color: #8A8A8A;
     font-size: 12px;
-    line-height: 1.7;
+    line-height: 1.7
 }
 
     .faq-a-inner b {
         color: #B0B0B0
     }
-/* ADDON 4 - Marketing Packages - same system as logo */
+
 .addon-packages {
     padding: 64px 4%;
     border-bottom: 1px solid var(--line);
@@ -897,13 +897,13 @@
     margin-top: 2px
 }
 
-    .pkg-price-wrap.usd {
+    .pkg-price-wrap .usd {
         font-size: 22px;
         font-weight: 900;
         color: #fff
     }
 
-    .pkg-price-wrap.kes {
+    .pkg-price-wrap .kes {
         font-size: 11px;
         color: var(--orange);
         font-weight: 700;
@@ -978,3 +978,11 @@
         grid-template-columns: 1fr
     }
 }
+/* ADDON 5 - only animation color, NO font change */
+.stats .count {
+    transition: color .2s
+}
+
+    .stats .count.counting {
+        color: var(--orange)
+    }
