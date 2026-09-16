@@ -3,6 +3,70 @@
 }
 <link rel="stylesheet" href="~/css/haveit.css" asp-append-version="true" />
 
+<style>
+	.haveit-marquee-wrapper {
+		width: 100%;
+		overflow: hidden;
+		background: #0C0C0C;
+		border-top: 1px solid #141414;
+		border-bottom: 1px solid #141414;
+		padding: 28px 0;
+		display: block;
+		min-height: 80px;
+	}
+
+	.haveit-marquee-label {
+		text-align: center;
+		color: #4A4A4A;
+		font-size: 10px;
+		letter-spacing: .22em;
+		text-transform: uppercase;
+		font-weight: 700;
+		margin-bottom: 18px;
+	}
+
+	.haveit-marquee-track {
+		display: flex;
+		align-items: center;
+		gap: 64px;
+		width: max-content;
+		animation: haveit-scroll 80s linear infinite;
+	}
+
+	.haveit-logo-item {
+		flex: 0 0 auto;
+		filter: grayscale(100%) brightness(1.4);
+		opacity: .7;
+		transition: .3s;
+	}
+
+		.haveit-logo-item:hover {
+			filter: grayscale(0%) brightness(1);
+			opacity: 1;
+			transform: scale(1.1)
+		}
+
+		.haveit-logo-item span {
+			font-family: 'Inter',sans-serif;
+			font-weight: 800;
+			font-size: 13px;
+			color: #E8E8EA;
+			text-transform: uppercase;
+			white-space: nowrap;
+			letter-spacing: -.02em;
+		}
+
+	@@keyframes haveit-scroll {
+		0% {
+			transform: translateX(0)
+		}
+
+		100% {
+			transform: translateX(-50%)
+		}
+	}
+</style>
+
 <section class="hero" id="home">
 	<div class="hero-bg"></div>
 	<div class="hero-left">
@@ -14,10 +78,6 @@
 			<div class="stat"><b style="color:#fff">4.9/5<br />stars</b><span>from 200+ reviews</span></div>
 			<div class="stat"><b>100+</b><span>brands scaled</span></div>
 		</div>
-	</div>
-	<div class="float-wrap">
-		<div class="fcard magnet"><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><img src="https://i.pravatar.cc/100?img=32" style="width:40px;height:40px;border-radius:50%" /><div><b style="font-size:13px;color:#fff">sarah</b><br /><span style="color:#777;font-size:11px">eco bloom</span></div></div><p style="color:#9A9A9A;font-size:12px;line-height:1.6">"went from 2% to 5.8% CVR in 30 days."</p></div>
-		<div class="fcard magnet"><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><img src="https://i.pravatar.cc/100?img=12" style="width:40px;height:40px;border-radius:50%" /><div><b style="font-size:13px;color:#fff">james</b><br /><span style="color:#777;font-size:11px">northfield co.</span></div></div><p style="color:#9A9A9A;font-size:12px;line-height:1.6">"ROAS jumped 3.1x in 6 weeks."</p></div>
 	</div>
 </section>
 
@@ -31,38 +91,71 @@
 		<div class="card magnet"><div class="ic">✉</div><h3>Email Marketing & Bulk SMS</h3><p>Bringing back 36% of lost sales.</p></div>
 		<div class="card magnet"><div class="ic">↗</div><h3>Brand Solutions</h3><p>Giving your business a voice, and a pulse.</p></div>
 	</div>
-
 	<div class="cta" id="contact">
 		<div><h2>ready to turn clicks<br />into customers?</h2><p>Growth audit in 24hrs. 3 leaks costing you money — no pitch.</p></div>
 		<div class="form" style="flex-direction:column;align-items:flex-start">
 			<div style="display:flex;gap:10px;flex-wrap:wrap">
-				<div>
-					<input id="cName" placeholder="Your Name" />
-					<div id="nameErr" class="error-msg">please enter your name</div>
-				</div>
-				<div>
-					<input id="cPhone" placeholder="Your Number" inputmode="tel" />
-					<div id="phoneErr" class="error-msg">please enter your number</div>
-				</div>
+				<div><input id="cName" placeholder="Your Name" /><div id="nameErr" class="error-msg">please enter your name</div></div>
+				<div><input id="cPhone" placeholder="Your Number" inputmode="tel" /><div id="phoneErr" class="error-msg">please enter your number</div></div>
 				<button class="btn-book magnet" onclick="bookAudit()">book my growth audit</button>
 			</div>
 		</div>
 	</div>
 </section>
 
-@* --- PROFESSIONAL ADDITIONS — ADDED BELOW YOUR ORIGINAL CODE, NOT ALTERING IT --- *@
 <div class="addon-trust">
-	<span>trusted by brands in nairobi • nanyuki • mombasa <b>100+ projects delivered</b></span>
-	<span>avg response <b>&lt; 2hrs on whatsapp</b></span>
+	<span>100+ projects delivered</span>
+	<span>avg response <b>1hr on whatsapp</b></span>
 </div>
-<section class="addon-portfolio" id="portfolio">
-	<h2 style="font-size:clamp(22px,3vw,32px);letter-spacing:-.04em;max-width:520px;line-height:.95;margin-bottom:28px;text-transform:lowercase">selected work — proof, not promises</h2>
-	<div class="addon-grid">
-		<div class="addon-item"><img src="https://picsum.photos/seed/haveit1/600/400" alt="project" loading="lazy" /><div class="meta"><h4>eco bloom — 5.8% CVR shopify</h4><p>UI + CRO + Email flow — 30 days</p></div></div>
-		<div class="addon-item"><img src="https://picsum.photos/seed/haveit2/600/400" alt="project" loading="lazy" /><div class="meta"><h4>northfield co. — 3.1x ROAS</h4><p>Paid ads + landing page audit</p></div></div>
-		<div class="addon-item"><img src="https://picsum.photos/seed/haveit3/600/400" alt="project" loading="lazy" /><div class="meta"><h4>laundri ke — 200+ leads/mo</h4><p>Social + WhatsApp funnel automation</p></div></div>
+
+<section class="haveit-marquee-wrapper">
+	<div class="haveit-marquee-label">Trusted by 21+ brands across Kenya</div>
+	<div class="haveit-marquee-track">
+		<div class="haveit-logo-item"><span>Lidanjam.art</span></div>
+		<div class="haveit-logo-item"><span>Meru Slopes Hotel</span></div>
+		<div class="haveit-logo-item"><span>THA NICKOLEE HOTEL</span></div>
+		<div class="haveit-logo-item"><span>Bison Restaurant</span></div>
+		<div class="haveit-logo-item"><span>Makumart Villa</span></div>
+		<div class="haveit-logo-item"><span>Kings Kuon</span></div>
+		<div class="haveit-logo-item"><span>TITOS house of fashion</span></div>
+		<div class="haveit-logo-item"><span>ALTITUDE FITNESS</span></div>
+		<div class="haveit-logo-item"><span>CLUB XOYO</span></div>
+		<div class="haveit-logo-item"><span>KUON BY CHEF TEV</span></div>
+		<div class="haveit-logo-item"><span>THE WORLD CLASS PLANNER</span></div>
+		<div class="haveit-logo-item"><span>PIRIPIRI BBQ</span></div>
+		<div class="haveit-logo-item"><span>DIAMOND FUN CITY</span></div>
+		<div class="haveit-logo-item"><span>RARRE Farm produce</span></div>
+		<div class="haveit-logo-item"><span>THE BRIDGE BAR & RESTAURANT</span></div>
+		<div class="haveit-logo-item"><span>MT. KENYA CULTURAL FESTIVAL</span></div>
+		<div class="haveit-logo-item"><span>GFIRC EVENTS</span></div>
+		<div class="haveit-logo-item"><span>AFTER SHAVE BY FLAIR</span></div>
+		<div class="haveit-logo-item"><span>TUNDA VILLE</span></div>
+		<div class="haveit-logo-item"><span>KASELLERS AUTO</span></div>
+		<div class="haveit-logo-item"><span>MIRIHI LIMITED</span></div>
+		<div class="haveit-logo-item"><span>Lidanjam.art</span></div>
+		<div class="haveit-logo-item"><span>Meru Slopes Hotel</span></div>
+		<div class="haveit-logo-item"><span>THA NICKOLEE HOTEL</span></div>
+		<div class="haveit-logo-item"><span>Bison Restaurant</span></div>
+		<div class="haveit-logo-item"><span>Makumart Villa</span></div>
+		<div class="haveit-logo-item"><span>Kings Kuon</span></div>
+		<div class="haveit-logo-item"><span>TITOS house of fashion</span></div>
+		<div class="haveit-logo-item"><span>ALTITUDE FITNESS</span></div>
+		<div class="haveit-logo-item"><span>CLUB XOYO</span></div>
+		<div class="haveit-logo-item"><span>KUON BY CHEF TEV</span></div>
+		<div class="haveit-logo-item"><span>THE WORLD CLASS PLANNER</span></div>
+		<div class="haveit-logo-item"><span>PIRIPIRI BBQ</span></div>
+		<div class="haveit-logo-item"><span>DIAMOND FUN CITY</span></div>
+		<div class="haveit-logo-item"><span>RARRE Farm produce</span></div>
+		<div class="haveit-logo-item"><span>THE BRIDGE BAR & RESTAURANT</span></div>
+		<div class="haveit-logo-item"><span>MT. KENYA CULTURAL FESTIVAL</span></div>
+		<div class="haveit-logo-item"><span>GFIRC EVENTS</span></div>
+		<div class="haveit-logo-item"><span>AFTER SHAVE BY FLAIR</span></div>
+		<div class="haveit-logo-item"><span>TUNDA VILLE</span></div>
+		<div class="haveit-logo-item"><span>KASELLERS AUTO</span></div>
+		<div class="haveit-logo-item"><span>MIRIHI LIMITED</span></div>
 	</div>
 </section>
+
 <section class="addon-process">
 	<div class="addon-step"><b>01 — audit</b><h4>find leaks</h4><p>We run your 24hr growth audit — 3 things costing you money, no pitch.</p></div>
 	<div class="addon-step"><b>02 — build</b><h4>fix fast</h4><p>Website, ads, brand — human-first, performance-driven, shipped in days.</p></div>
@@ -73,21 +166,14 @@
 	const words = ["conversions and ROI", "customers not clicks", "revenue not likes", "value not vanity"];
 	let wi = 0, ci = 0, del = false; const el = document.getElementById('typeTarget');
 	(function loop() { let w = words[wi]; if (!del) { el.textContent = w.substring(0, ++ci); if (ci === w.length) { del = true; setTimeout(loop, 1600); return; } } else { el.textContent = w.substring(0, --ci); if (ci === 0) { del = false; wi = (wi + 1) % words.length; } } setTimeout(loop, del ? 35 : 90); })();
-
 	function bookAudit() {
-		const nameEl = document.getElementById('cName');
-		const phoneEl = document.getElementById('cPhone');
-		const nameErr = document.getElementById('nameErr');
-		const phoneErr = document.getElementById('phoneErr');
-		let name = nameEl.value.trim();
-		let phone = phoneEl.value.trim();
-		let valid = true;
+		const nameEl = document.getElementById('cName'); const phoneEl = document.getElementById('cPhone');
+		const nameErr = document.getElementById('nameErr'); const phoneErr = document.getElementById('phoneErr');
+		let name = nameEl.value.trim(); let phone = phoneEl.value.trim(); let valid = true;
 		nameEl.classList.remove('input-error', 'shake'); phoneEl.classList.remove('input-error', 'shake');
-		nameErr.classList.remove('show'); phoneErr.classList.remove('show');
-		void nameEl.offsetWidth; void phoneEl.offsetWidth;
+		nameErr.classList.remove('show'); phoneErr.classList.remove('show'); void nameEl.offsetWidth; void phoneEl.offsetWidth;
 		if (name.length < 2) { nameEl.classList.add('input-error', 'shake'); nameErr.classList.add('show'); valid = false; }
-		let digits = phone.replace(/\D/g, '');
-		if (digits.length < 8) { phoneEl.classList.add('input-error', 'shake'); phoneErr.classList.add('show'); valid = false; }
+		let digits = phone.replace(/\D/g, ''); if (digits.length < 8) { phoneEl.classList.add('input-error', 'shake'); phoneErr.classList.add('show'); valid = false; }
 		if (!valid) { if (name.length < 2) nameEl.focus(); else phoneEl.focus(); return; }
 		const msg = `Hi haveit design, I am ${name} (${phone}). Book my growth audit - I want to turn clicks into customers.`;
 		window.open('https://wa.me/254706489989?text=' + encodeURIComponent(msg), '_blank');
