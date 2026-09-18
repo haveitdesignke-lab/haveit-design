@@ -1,6 +1,125 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Privacy Policy - haveit design";
 }
-<h1>@ViewData["Title"]</h1>
+<style>
+    .legal-wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 70px 4% 80px
+    }
 
-<p>Use this page to detail your site's privacy policy.</p>
+    .legal-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #151515;
+        border: 1px solid #222;
+        border-radius: 100px;
+        padding: 7px 14px;
+        color: #777;
+        font-size: 11px;
+        letter-spacing: .08em;
+        font-weight: 700;
+        margin-bottom: 22px
+    }
+
+        .legal-badge b {
+            width: 6px;
+            height: 6px;
+            background: #FF9A3C;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px #FF9A3C
+        }
+
+    .legal-wrap h1 {
+        font-size: clamp(36px,6vw,56px);
+        font-weight: 900;
+        letter-spacing: -.04em;
+        line-height: .9;
+        margin-bottom: 14px
+    }
+
+        .legal-wrap h1 span {
+            color: #FF9A3C
+        }
+
+    .legal-meta {
+        color: #4A4A4A;
+        font-size: 13px;
+        margin-bottom: 40px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap
+    }
+
+    .legal-card {
+        background: #101010;
+        border: 1px solid #181818;
+        border-radius: 22px;
+        padding: 28px 26px;
+        margin-bottom: 18px;
+        opacity: 1 !important;
+        transform: none !important
+    }
+
+        .legal-card h2 {
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+            .legal-card h2 i {
+                width: 28px;
+                height: 28px;
+                border-radius: 9px;
+                background: #1A1A1A;
+                border: 1px solid #222;
+                display: grid;
+                place-items: center;
+                font-style: normal;
+                font-size: 13px;
+                color: #FF9A3C
+            }
+
+        .legal-card p, .legal-card li {
+            color: #9A9A9A;
+            font-size: 14px;
+            line-height: 1.75
+        }
+
+        .legal-card ul {
+            padding-left: 18px;
+            display: grid;
+            gap: 8px;
+            margin-top: 10px
+        }
+
+        .legal-card a {
+            color: #FF9A3C;
+            text-decoration: none
+        }
+</style>
+
+<section class="legal-wrap">
+    <div class="legal-badge"><b></b> LEGAL • UPDATED FEB 2026</div>
+    <h1>Privacy <span>Policy</span></h1>
+    <div class="legal-meta"><span>haveit design — Nanyuki, Kenya</span><span>•</span><span>haveitdesign.ke@gmail.com</span></div>
+
+    <div class="legal-card"><h2><i>01</i> Who We Are</h2><p>haveit design is a performance-driven agency based in Nanyuki, serving 21+ brands across Kenya.</p></div>
+    <div class="legal-card">
+        <h2><i>02</i> Data We Collect</h2><ul>
+        <li>Contact Info: Name, phone, email from audit form</li>
+        <li>Order Context: Package selected, USD/KES rate</li>
+        <li>WhatsApp messages to 254706489989</li>
+    </ul>
+</div>
+<div class="legal-card"><h2><i>03</i> How We Use It</h2><p>To run your 24hr Growth Audit, deliver logos/websites, respond within 1hr on WhatsApp. We do NOT sell data.</p></div>
+<div class="legal-card"><h2><i>04</i> Cookies</h2><p>Only essential cookies for USD/KES toggle and Google Fonts. No ad tracking.</p></div>
+<div class="legal-card"><h2><i>05</i> Your Rights</h2><p>Under Kenya Data Protection Act 2019 you can request access, correction, or deletion via WhatsApp or email.</p></div>
+<div style="margin-top:22px;display:flex;gap:12px"><a href="/" class="btn-nav">← Back to Home</a><a href="/Home/Terms" style="color:#777;font-size:13px;text-decoration:none;padding:12px 0">View Terms →</a></div>
+</section>
