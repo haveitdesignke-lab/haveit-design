@@ -1,0 +1,3 @@
+﻿User-agent: *
+Allow: /
+Sitemap: https://haveit-design-ke-e3g4gverbndkfjaz.southafricanorth-01.azurewebsites.net/sitemap.xml
