@@ -202,7 +202,7 @@
 		let digits = phone.replace(/\D/g, ''); if (digits.length < 8) { phoneEl.classList.add('input-error', 'shake'); phoneErr.classList.add('show'); valid = false; }
 		if (!valid) { if (name.length < 2) nameEl.focus(); else phoneEl.focus(); return; }
 		const msg = `Hi Haveit Design, I am ${name} (${phone}). Book my growth audit - I want to turn clicks into customers.`;
-		window.open('https://wa.me/254706489989?text=' + encodeURIComponent(msg), '_blank');
+		window.open('https://wa.me/254785859927?text=' + encodeURIComponent(msg), '_blank');
 	}
 	let usdKes = 129;
 	async function fetchRate() { try { const r = await fetch('https://open.er-api.com/v6/latest/USD'); const d = await r.json(); if (d && d.rates && d.rates.KES) { usdKes = Math.round(d.rates.KES); document.getElementById('liveRate').textContent = `Live Rate: $1 = KES ${usdKes} • Auto-Updating`; const lr2 = document.getElementById('liveRate2'); if (lr2) lr2.textContent = usdKes; updatePrices(); } } catch (e) { } }
@@ -212,9 +212,9 @@
 		document.querySelectorAll('.pkg-card[data-kes]').forEach(card => { let kes = parseFloat(card.getAttribute('data-kes')); let usd = (kes / usdKes).toFixed(0); const usdEl = card.querySelector('.usd'); const kesEl = card.querySelector('.kes'); if (usdEl && kesEl) { if (kesEl.textContent.includes('Months') || kesEl.textContent.includes('Annual')) { const base = kesEl.textContent.includes('3 Months') ? ' — 3 Months' : ' — Annually'; kesEl.textContent = `KSh ${kes.toLocaleString()}${base}`; usdEl.textContent = `$${usd}`; } else { usdEl.textContent = `$${usd}`; } } });
 	}
 	function setCurr(c) { document.getElementById('btnUSD').classList.toggle('active', c === 'USD'); document.getElementById('btnKES').classList.toggle('active', c === 'KES'); }
-	function orderLogo(type, usd) { let kes = Math.round(usd * usdKes); let msg = `Hi Haveit Design, I want ${type} Logo Design. Price $${usd} / KSh ${kes.toLocaleString()} (Rate $1 = KES ${usdKes}). Let's start.`; window.open('https://wa.me/254706489989?text=' + encodeURIComponent(msg), '_blank'); }
-	function orderPkg(type, kes) { let usd = Math.round(kes / usdKes); let msg = `Hi Haveit Design, I want ${type}. Price KSh ${kes.toLocaleString()} / $${usd} (Rate $1 = KES ${usdKes}). Let's start.`; window.open('https://wa.me/254706489989?text=' + encodeURIComponent(msg), '_blank'); }
-	function orderPkgUSD(type, usd) { let kes = Math.round(usd * usdKes); let msg = `Hi Haveit Design, I want ${type}. Price $${usd} / KSh ${kes.toLocaleString()} (Rate $1 = KES ${usdKes}). Let's start.`; window.open('https://wa.me/254706489989?text=' + encodeURIComponent(msg), '_blank'); }
+	function orderLogo(type, usd) { let kes = Math.round(usd * usdKes); let msg = `Hi Haveit Design, I want ${type} Logo Design. Price $${usd} / KSh ${kes.toLocaleString()} (Rate $1 = KES ${usdKes}). Let's start.`; window.open('https://wa.me/254785859927?text=' + encodeURIComponent(msg), '_blank'); }
+	function orderPkg(type, kes) { let usd = Math.round(kes / usdKes); let msg = `Hi Haveit Design, I want ${type}. Price KSh ${kes.toLocaleString()} / $${usd} (Rate $1 = KES ${usdKes}). Let's start.`; window.open('https://wa.me/254785859927?text=' + encodeURIComponent(msg), '_blank'); }
+	function orderPkgUSD(type, usd) { let kes = Math.round(usd * usdKes); let msg = `Hi Haveit Design, I want ${type}. Price $${usd} / KSh ${kes.toLocaleString()} (Rate $1 = KES ${usdKes}). Let's start.`; window.open('https://wa.me/254785859927?text=' + encodeURIComponent(msg), '_blank'); }
 	fetchRate(); updatePrices();
 	function toggleFaq(btn) {
 		const item = btn.closest('.faq-item');
